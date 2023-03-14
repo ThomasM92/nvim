@@ -1,50 +1,49 @@
 return {
-	{
-		'folke/which-key.nvim',
-		config = function()
-			local wk = require("which-key")
+	'folke/which-key.nvim',
+	config = function()
+		local wk = require("which-key")
 
-			wk.register({
-				["<leader>"] = {
-					["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment (visual)" },
-				}
-			}, { mode = "v" })
+		wk.register({
+			["<leader>"] = {
+				["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment (visual)" },
+			}
+		}, { mode = "v" })
 
-			wk.register({
-				g = {
-					d = "Go to definition",
-					r = "Go to references",
+		wk.register({
+			g = {
+				d = "Go to definition",
+				r = "Go to references",
+			},
+			["<leader>"] = {
+				v = { "<cmd>vsplit<cr>", "Vertical split" },
+				[";"] = { "<CMD>Alpha<cr>", "Dashboard" },
+				w = { "<cmd>w!<cr>", "Save" },
+				["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment" },
+				n = { "<cmd>nohlsearch<cr>", "Nohl" },
+				b = "Buffer",
+				c = "Close",
+				q = "Quit",
+				e = "Explorer",
+				f = {
+					name = "Find",
+					f = "Files",
+					g = "Git files",
+					b = "Buffers",
+					t = "Text",
 				},
-				["<leader>"] = {
-					[";"] = { "<cmd>Alpha<CR>", "Dashboard" },
-					w = { "<cmd>w!<CR>", "Save" },
-					["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment" },
-					n = { "<cmd>nohlsearch<CR>", "Nohl" },
-					b = "Buffer",
-					c = "Close",
-					q = "Quit",
-					t = "Terminal",
-					e = "Explorer",
-					f = {
-						name = "Find",
-						f = "Files",
-						g = "Git files",
-						b = "Buffers",
-						t = "Text",
-					},
-					u = "Undotree",
-					j = {
-						name = "Jump",
-						w = "Next words",
-						b = "Last words",
-						f = "Next characters",
-						F = "Last characters",
-						t = "Next characters -1",
-						T = "Last characters -1",
-						j = "Next lines",
-						k = "Last lines"
-					},
-					-- p = {
+				u = "Undotree",
+				j = {
+					name = "Jump",
+					w = "Next words",
+					b = "Last words",
+					f = "Next characters",
+					F = "Last characters",
+					t = "Next characters -1",
+					T = "Last characters -1",
+					j = "Next lines",
+					k = "Last lines"
+				},
+				-- p = {
 					-- 	name = "Plugins",
 					-- 	i = { "<cmd>PackerInstall<cr>", "Install" },
 					-- 	s = { "<cmd>PackerSync<cr>", "Sync" },
@@ -53,7 +52,7 @@ return {
 					-- 	u = { "<cmd>PackerUpdate<cr>", "Update" },
 					-- 	p = { "<cmd>PackerProfile<cr>", "Profile" },
 					-- },
-					p = { "<cmd>Lazy<CR>", "Plugins" },
+					p = { "<cmd>Lazy<cr>", "Plugins" },
 					l = {
 						name = "LSP",
 						a = "Actions",
@@ -98,5 +97,4 @@ return {
 
 			wk.setup()
 		end,
-	},
-}
+	}
