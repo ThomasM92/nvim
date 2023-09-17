@@ -19,6 +19,12 @@ return {
 		-- Snippets
 		{'L3MON4D3/LuaSnip'},             -- Required
 		{'rafamadriz/friendly-snippets'}, -- Optional
+
+		{'simrat39/rust-tools.nvim'},
+	},
+	event = { 'BufReadPre', 'BufNewFile' },
+	keys = {
+		{ '<leader>l' },
 	},
 	config = function()
 		local lsp = require("lsp-zero")
@@ -29,7 +35,6 @@ return {
 			'tsserver',
 			'rust_analyzer'
 		})
-
 
 		lsp.on_attach(function(client, bufnr)
 			local options = { buffer = bufnr, remap = false }

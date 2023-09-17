@@ -7,13 +7,13 @@ return {
 		local version = vim.version()
 
 		local logo = [[
-                                                 gg                     
-                                                 ""                     
-  ,ggg,,ggg,    ,ggg,     ,ggggg,     ggg    gg  gg    ,ggg,,ggg,,ggg,  
- ,8" "8P" "8,  i8" "8i   dP"  "Y8ggg d8"Yb   88bg88   ,8" "8P" "8P" "8, 
- I8   8I   8I  I8, ,8I  i8'    ,8I  dP  I8   8I  88   I8   8I   8I   8I 
-,dP   8I   Yb, `YbadP' ,d8,   ,d8',dP   I8, ,8I_,88,_,dP   8I   8I   Yb,
-8P'   8I   `Y8888P"Y888P"Y8888P"  8"     "Y8P" 8P""Y88P'   8I   8I   `Y8
+                                                                 gg                     
+                                                                 ""                     
+                  ,ggg,,ggg,    ,ggg,     ,ggggg,     ggg    gg  gg    ,ggg,,ggg,,ggg,  
+                 ,8" "8P" "8,  i8" "8i   dP"  "Y8ggg d8"Yb   88bg88   ,8" "8P" "8P" "8,      ／|_        
+                 I8   8I   8I  I8, ,8I  i8'    ,8I  dP  I8   8I  88   I8   8I   8I   8I     (o o /      
+                ,dP   8I   Yb, `YbadP' ,d8,   ,d8',dP   I8, ,8I_,88,_,dP   8I   8I   Yb,     |.   ~.    
+                8P'   8I   `Y8888P"Y888P"Y8888P"  8"     "Y8P" 8P""Y88P'   8I   8I   `Y8     じしf_,)ノ 
 ]]
 
 		local header = {
@@ -48,15 +48,13 @@ return {
 			type = "group",
 			val = {
 				dashboard.button( "n", "  > New file", ":ene <BAR> startinsert <CR>", options),
-				dashboard.button( "f", "  > Find file", ":Telescope find_files<CR>", options),
-				dashboard.button( "r", "  > Recent", ":Telescope oldfiles<CR>", options),
-				dashboard.button( "p", "  > Projects", ":lua require('telescope').extensions.project.project{}<CR>", options),
-				dashboard.button( "e", "פּ  > Explorer", ":NvimTreeToggle<CR>"),
-				-- dashboard.button( "t", "  > Todos", ":TodoTelescope keywords=TODO<CR>"),
-				dashboard.button( "l", "  > LSP", ":Mason<CR>"),
-				dashboard.button( "z", "  > Plugins", ":Lazy<CR>"),
-				dashboard.button( "s", "  > Settings", ":e $MYVIMRC <CR>", options),
-				dashboard.button( "q", "  > Quit NVIM", ":qa<CR>", options),
+				dashboard.button( "SPC f", "  > Find file"),
+				dashboard.button( "SPC r", "  > Recent"),
+				dashboard.button( "SPC o", "  > Explorer"),
+				dashboard.button( "SPC l", "  > LSP"),
+				dashboard.button( "SPC p", "  > Plugins"),
+				dashboard.button( "SPC s", "  > Settings"),
+				dashboard.button( "SPC q", "  > Quit NVIM"),
 			},
 			opts = {
 				position = "center",
@@ -102,7 +100,8 @@ return {
 			callback = function()
 				local stats = require("lazy").stats()
 				local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
-				footer.val = "⚡ Neovim loaded " .. stats.count .. " plugins in " .. ms .. "ms"
+				-- footer.val = "⚡ Neovim loaded " .. stats.count .. " plugins in " .. ms .. "ms"
+				footer.val = "⚡ Neovim loaded in " .. ms .. "ms"
 				pcall(vim.cmd.AlphaRedraw)
 			end,
 		})

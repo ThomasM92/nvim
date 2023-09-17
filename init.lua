@@ -21,10 +21,8 @@ require('lazy').setup('plugins')
 local options = { noremap = true, silent = true }
 
 vim.g.mapleader = ' '
-vim.keymap.set('n', '<leader>e', vim.cmd.NvimTreeToggle, options)
 vim.keymap.set('n', '<leader>q', ':qa<cr>', options)
--- vim.keymap.set('n', '<leader>c', ':bd<cr>', options)
-vim.keymap.set('n', '<leader>c', function() require("mini.bufremove").delete(0, false) end, options)
+vim.keymap.set('n', '<leader>c', ':bd<cr>', options)
 
 -- Move selected text up and down
 vim.keymap.set('v', 'K', ":m '<-2<cr>gv=gv", options)
@@ -43,9 +41,10 @@ vim.keymap.set('n', '<C-k>', '<C-w>k', options)
 vim.keymap.set('n', '<C-l>', '<C-w>l', options)
 
 -- Tabs navigation
-vim.keymap.set('n', '<S-Tab>', '<Plug>(cokeline-focus-prev)', options)
-vim.keymap.set('n', '<Tab>', '<Plug>(cokeline-focus-next)', options)
-vim.keymap.set('n', '<leader>b', '<Plug>(cokeline-pick-focus)', options)
+vim.keymap.set('n', '<S-Tab>', ':bprevious<cr>', options)
+vim.keymap.set('n', '<Tab>', ':bnext<cr>', options)
+vim.keymap.set('n', '<leader>s', ':e $MYVIMRC <CR>', options)
+
 
 
 -- OPTIONS

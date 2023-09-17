@@ -1,6 +1,5 @@
 return {
 	"ziontee113/neo-minimap",
-	-- lazy = true,
 	config = function()
 		local nm = require("neo-minimap")
 

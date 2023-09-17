@@ -1,7 +1,8 @@
 return {
 	'numToStr/Comment.nvim',
-	-- lazy = true,
-	config = function()
-		require('Comment').setup()
-	end
+	keys = {
+		{ '<leader>/', '<Plug>(comment_toggle_linewise_current)' },
+		{ '<leader>/', '<Plug>(comment_toggle_linewise_visual)', mode = 'v' },
+	},
+	config = true,
 }

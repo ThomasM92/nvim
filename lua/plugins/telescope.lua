@@ -2,46 +2,36 @@ return {
 	{
 		'nvim-telescope/telescope.nvim',
 		-- lazy = true,
+		keys = {
+			{ '<leader>r' },
+			{ '<leader>f' },
+			{ '<leader>b' },
+			{ '<leader>t' },
+		},
 		dependencies = {
-			lazy = true,
-			'nvim-lua/plenary.nvim'
+			{ 'nvim-lua/plenary.nvim', lazy = true }
 		},
 		config = function()
 			local builtin = require('telescope.builtin')
 			local options = { noremap = true, silent = true }
 
-			vim.keymap.set('n', '<leader>ff', function() builtin.find_files({ layout_strategy = 'horizontal' }) end, options)
-			vim.keymap.set('n', '<leader>fg', function() builtin.git_files() end, options)
-			vim.keymap.set('n', '<leader>fb', function() builtin.buffers({ initial_mode = "normal" }) end, options)
-			vim.keymap.set('n', '<leader>ft', function() builtin.live_grep() end, options)
+			vim.keymap.set('n', '<leader>r', function() builtin.oldfiles({ layout_strategy = 'horizontal' }) end, options)
+			vim.keymap.set('n', '<leader>f', function() builtin.find_files({ layout_strategy = 'horizontal' }) end, options)
+			vim.keymap.set('n', '<leader>b', function() builtin.buffers({ initial_mode = "normal" }) end, options)
+			vim.keymap.set('n', '<leader>t', function() builtin.live_grep() end, options)
 
 			require('telescope').setup({
 				pickers = {
 					buffers = {
 						theme = "dropdown",
+						mappings = {
+							n = {
+								["d"] = "delete_buffer",
+							}
+						},
 					}
 				},
-				extensions = {
-					project = {
-						base_dirs = {
-							'~/Documents/dev/ElliCAD',
-							'~/Documents/dev/ElliFAO',
-							'~/Documents/dev/ElliScene',
-							'~/Documents/dev/EllisettingMeteor',
-						},
-						hidden_files = true, -- default: false
-						theme = "dropdown",
-						order_by = "asc",
-						search_by = "title",
-						sync_with_nvim_tree = true, -- default false
-					}
-				}
 			})
-
-			require('telescope').load_extension('project')
 		end
-	},
-	{
-		'nvim-telescope/telescope-project.nvim',
 	},
 }

@@ -1,7 +1,9 @@
 return {
 	'phaazon/hop.nvim',
-	-- lazy = true,
 	branch = 'v2', -- optional but strongly recommended
+	keys = {
+		{ '<leader>j' },
+	},
 	config = function()
 		local hop = require('hop')
 		local directions = require('hop.hint').HintDirection

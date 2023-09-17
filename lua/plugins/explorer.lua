@@ -3,7 +3,12 @@ return {
 	dependencies = {
 		'kyazdani42/nvim-web-devicons',
 	},
-	config = function()
-		require("nvim-tree").setup()
-	end
+	keys = {
+		{ '<leader>e', vim.cmd.NvimTreeToggle },
+	},
+	config = true,
+	-- config = function()
+	-- 	require("nvim-tree").setup()
+	-- end,
+	-- cmd = "nvimtreecmd",
 }
