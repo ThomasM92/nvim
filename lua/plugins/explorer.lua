@@ -4,7 +4,7 @@ return {
 		'kyazdani42/nvim-web-devicons',
 	},
 	keys = {
-		{ '<leader>e', vim.cmd.NvimTreeToggle },
+		{ '<leader>E', vim.cmd.NvimTreeToggle },
 	},
 	config = true,
 	-- config = function()

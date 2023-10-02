@@ -10,9 +10,11 @@ if not vim.loop.fs_stat(lazypath) then
 	})
 end
 vim.opt.rtp:prepend(lazypath)
-
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+
+-- vim.cmd [[ autocmd RecordingEnter * set cmdheight=1 ]]
+-- vim.cmd [[ autocmd RecordingLeave * set cmdheight=0 ]]
 
 require('lazy').setup('plugins')
 
@@ -41,9 +43,13 @@ vim.keymap.set('n', '<C-k>', '<C-w>k', options)
 vim.keymap.set('n', '<C-l>', '<C-w>l', options)
 
 -- Tabs navigation
-vim.keymap.set('n', '<S-Tab>', ':bprevious<cr>', options)
-vim.keymap.set('n', '<Tab>', ':bnext<cr>', options)
-vim.keymap.set('n', '<leader>s', ':e $MYVIMRC <CR>', options)
+vim.keymap.set('n', '<S-Tab>', '<Plug>(cokeline-focus-prev)', options)
+vim.keymap.set('n', '<Tab>', '<Plug>(cokeline-focus-next)', options)
+vim.keymap.set('n', '<leader>b', '<Plug>(cokeline-pick-focus)', options)
+
+-- Settings
+vim.keymap.set('n', '<leader>,', ':e $MYVIMRC <CR>', options)
+vim.keymap.set('n', '<leader>s', '*N', options)
 
 
 
@@ -53,7 +59,7 @@ vim.keymap.set('n', '<leader>s', ':e $MYVIMRC <CR>', options)
 vim.opt.incsearch = true
 -- vim.opt.backup = false                          -- creates a backup file
 vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
-vim.opt.cmdheight = 2 -- more space in the neovim command line for displaying messages
+vim.opt.cmdheight = 1 -- more space in the neovim command line for displaying messages
 -- vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
 -- vim.opt.conceallevel = 0                        -- so that `` is visible in markdown files
 -- vim.opt.fileencoding = "utf-8"                  -- the encoding written to a file
