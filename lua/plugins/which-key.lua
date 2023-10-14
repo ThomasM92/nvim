@@ -81,17 +81,7 @@ return {
 					c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
 					d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Git Diff" },
 				},
-				m = {
-					name = "Minimap",
-					f = "Functions",
-					a = "Arrow functions",
-					i = "Interfaces",
-					c = "Classes",
-					m = "Methods",
-					e = "Enums",
-					E = "Exports",
-					I = "Imports",
-				},
+				m = "Minimap",
 			}
 		})
 
