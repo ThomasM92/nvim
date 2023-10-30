@@ -10,6 +10,8 @@ if not vim.loop.fs_stat(lazypath) then
 	})
 end
 vim.opt.rtp:prepend(lazypath)
+-- vim.opt.rtp:prepend('/home/tm/.opam/default/share/ocp-indent/vim')
+-- vim.opt.rtp:prepend('/home/tm/.opam/default/share/merlin/vim')
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -104,4 +106,3 @@ if vim.g.neovide then
 else
 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 end
-

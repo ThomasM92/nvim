@@ -15,7 +15,7 @@ return {
 				-- max_width = {40, 0.2} means "the lesser of 40 columns or 20% of total"
 				max_width = { 100, 0.2 },
 				width = nil,
-				min_width = 20,
+				min_width = 30,
 
 				-- key-value pairs of window-local options for aerial window (e.g. winhl)
 				win_opts = {},
@@ -24,7 +24,8 @@ return {
 				-- options will open the window in the other direction *if* there is a
 				-- different buffer in the way of the preferred direction
 				-- Enum: prefer_right, prefer_left, right, left, float
-				default_direction = "prefer_right",
+				-- default_direction = "prefer_right",
+				default_direction = "left",
 
 				-- Determines where the aerial window will be opened
 				--   edge   - open aerial at the far right/left of the editor
