@@ -36,7 +36,8 @@ return {
 				f = {
 					name = "Find",
 					f = "File",
-					r = "Recent",
+					r = "Recent file",
+					d = "Diagnostic",
 					t = "Text",
 					b = "Buffer",
 				},

@@ -6,6 +6,7 @@ return {
 		{ '<leader>ff' },
 		{ '<leader>fb' },
 		{ '<leader>ft' },
+		{ '<leader>fd' },
 	},
 	dependencies = {
 		{ 'nvim-lua/plenary.nvim', lazy = true }
@@ -18,6 +19,7 @@ return {
 		vim.keymap.set('n', '<leader>ff', function() builtin.find_files({ layout_strategy = 'horizontal' }) end, options)
 		vim.keymap.set('n', '<leader>fb', function() builtin.buffers({ initial_mode = "normal" }) end, options)
 		vim.keymap.set('n', '<leader>ft', function() builtin.live_grep() end, options)
+		vim.keymap.set('n', '<leader>fd', function() builtin.diagnostics({ layout_strategy = 'center', bufnr = 0 }) end, options)
 
 		require('telescope').setup({
 			pickers = {
