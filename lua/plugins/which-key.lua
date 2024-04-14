@@ -32,7 +32,11 @@ return {
 				[","] = "Settings",
 				s = "Occurence",
 				e = "Explorer",
-				E = "File Tree",
+				d = {
+					name = "Debugger",
+					c = "Continue",
+					t = "Toggle breakpoint",
+				},
 				f = {
 					name = "Find",
 					f = "File",

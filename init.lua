@@ -22,6 +22,8 @@ require('lazy').setup('plugins')
 
 -- KEYMAPS
 
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 local options = { noremap = true, silent = true }
 
 vim.g.mapleader = ' '

@@ -45,6 +45,7 @@ return {
 			vim.keymap.set("n", "<leader>lr", function() vim.lsp.buf.rename() end, options)
 			vim.keymap.set("n", "<leader>ls", function() vim.lsp.buf.signature_help() end, options)
 			vim.keymap.set("n", "<leader>ld", function() vim.diagnostic.open_float() end, options)
+			vim.keymap.set("n", "<leader>lf", function() vim.lsp.buf.format() end, options)
 		end)
 
 		lsp.setup()

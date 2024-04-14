@@ -1,10 +1,12 @@
 return {
 	-- "ntk148v/komau.vim",
 	'rose-pine/neovim',
+	-- 'kdheepak/monochrome.nvim',
 	lazy = false, -- make sure we load this during startup if it is your main colorscheme
 	priority = 1000, -- make sure to load this before all the other start plugins
 	-- name = 'komau',
 	name = 'rose-pine',
+	-- name = 'monochome',
 	config = function()
 		require('rose-pine').setup({
 			--- @usage 'auto'|'main'|'moon'|'dawn'
@@ -17,5 +19,6 @@ return {
 		-- Set colorscheme after options
 		vim.cmd('colorscheme rose-pine')
 		-- vim.cmd('colorscheme komau')
+		-- vim.cmd('colorscheme monochrome')
 	end
 }
