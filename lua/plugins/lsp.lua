@@ -20,7 +20,9 @@ return {
 		{'L3MON4D3/LuaSnip'},             -- Required
 		{'rafamadriz/friendly-snippets'}, -- Optional
 
+		-- Rust utils & fmt
 		{'simrat39/rust-tools.nvim'},
+		{'rust-lang/rust.vim'}
 	},
 	event = { 'BufReadPre', 'BufNewFile' },
 	keys = {
@@ -49,5 +51,8 @@ return {
 		end)
 
 		lsp.setup()
+
+		-- rust autofmt
+		vim.g.rustfmt_autosave = 1
 	end
 }
